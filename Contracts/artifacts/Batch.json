@@ -1,0 +1,167 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"ropsten:3": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"rinkeby:4": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"kovan:42": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"goerli:5": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"generatedSources": [],
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"deployedBytecode": {
+			"generatedSources": [],
+			"immutableReferences": {},
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"gasEstimates": null,
+		"methodIdentifiers": {
+			"batchAll(address[],uint256[],bytes[],uint64[])": "96e292b8",
+			"batchSome(address[],uint256[],bytes[],uint64[])": "79df4b9c",
+			"batchSomeUntilFailure(address[],uint256[],bytes[],uint64[])": "cf0491c7"
+		}
+	},
+	"abi": [
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "index",
+					"type": "uint256"
+				}
+			],
+			"name": "SubcallFailed",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "index",
+					"type": "uint256"
+				}
+			],
+			"name": "SubcallSucceeded",
+			"type": "event"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address[]",
+					"name": "to",
+					"type": "address[]"
+				},
+				{
+					"internalType": "uint256[]",
+					"name": "value",
+					"type": "uint256[]"
+				},
+				{
+					"internalType": "bytes[]",
+					"name": "callData",
+					"type": "bytes[]"
+				},
+				{
+					"internalType": "uint64[]",
+					"name": "gasLimit",
+					"type": "uint64[]"
+				}
+			],
+			"name": "batchAll",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address[]",
+					"name": "to",
+					"type": "address[]"
+				},
+				{
+					"internalType": "uint256[]",
+					"name": "value",
+					"type": "uint256[]"
+				},
+				{
+					"internalType": "bytes[]",
+					"name": "callData",
+					"type": "bytes[]"
+				},
+				{
+					"internalType": "uint64[]",
+					"name": "gasLimit",
+					"type": "uint64[]"
+				}
+			],
+			"name": "batchSome",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address[]",
+					"name": "to",
+					"type": "address[]"
+				},
+				{
+					"internalType": "uint256[]",
+					"name": "value",
+					"type": "uint256[]"
+				},
+				{
+					"internalType": "bytes[]",
+					"name": "callData",
+					"type": "bytes[]"
+				},
+				{
+					"internalType": "uint64[]",
+					"name": "gasLimit",
+					"type": "uint64[]"
+				}
+			],
+			"name": "batchSomeUntilFailure",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		}
+	]
+}

@@ -1,0 +1,199 @@
+{
+	"compiler": {
+		"version": "0.8.3+commit.8d00100c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "SubcallFailed",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "SubcallSucceeded",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address[]",
+						"name": "to",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "value",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "bytes[]",
+						"name": "callData",
+						"type": "bytes[]"
+					},
+					{
+						"internalType": "uint64[]",
+						"name": "gasLimit",
+						"type": "uint64[]"
+					}
+				],
+				"name": "batchAll",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address[]",
+						"name": "to",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "value",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "bytes[]",
+						"name": "callData",
+						"type": "bytes[]"
+					},
+					{
+						"internalType": "uint64[]",
+						"name": "gasLimit",
+						"type": "uint64[]"
+					}
+				],
+				"name": "batchSome",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address[]",
+						"name": "to",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "value",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "bytes[]",
+						"name": "callData",
+						"type": "bytes[]"
+					},
+					{
+						"internalType": "uint64[]",
+						"name": "gasLimit",
+						"type": "uint64[]"
+					}
+				],
+				"name": "batchSomeUntilFailure",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"author": "The Moonbeam Team",
+			"custom:address": "0x0000000000000000000000000000000000000808",
+			"details": "Allows to perform multiple calls throught one call to the precompile. Can be used by EOA to do multiple calls in a single transaction.",
+			"kind": "dev",
+			"methods": {
+				"batchAll(address[],uint256[],bytes[],uint64[])": {
+					"custom:selector": "96e292b8",
+					"details": "Batch multiple calls into a single transaction. All calls are performed from the address calling this precompile. In case of one subcall reverting, the entire batch will revert.",
+					"params": {
+						"callData": "Call data for each `to` address. If array is shorter than \"to\" then additional calls will be performed with an empty call data.",
+						"gasLimit": "Gas limit for each `to` address. Use 0 to forward all the remaining gas. If array is shorter than \"to\" then the remaining gas available will be used.",
+						"to": "List of addresses to call.",
+						"value": "List of values for each subcall. If array is shorter than \"to\" then additional calls will be performed with a value of 0."
+					}
+				},
+				"batchSome(address[],uint256[],bytes[],uint64[])": {
+					"custom:selector": "79df4b9c",
+					"details": "Batch multiple calls into a single transaction. All calls are performed from the address calling this precompile. In case of one subcall reverting following subcalls will still be attempted.",
+					"params": {
+						"callData": "Call data for each `to` address. If array is shorter than \"to\" then additional calls will be performed with an empty call data.",
+						"gasLimit": "Gas limit for each `to` address. Use 0 to forward all the remaining gas. If array is shorter than \"to\" then the remaining gas available will be used.",
+						"to": "List of addresses to call.",
+						"value": "List of values for each subcall. If array is shorter than \"to\" then additional calls will be performed with a value of 0."
+					}
+				},
+				"batchSomeUntilFailure(address[],uint256[],bytes[],uint64[])": {
+					"custom:selector": "cf0491c7",
+					"details": "Batch multiple calls into a single transaction. All calls are performed from the address calling this precompile. In case of one subcall reverting, no more subcalls will be executed but the batch transaction will succeed. Use batchAll to revert on any subcall revert.",
+					"params": {
+						"callData": "Call data for each `to` address. If array is shorter than \"to\" then additional calls will be performed with an empty call data.",
+						"gasLimit": "Gas limit for each `to` address. Use 0 to forward all the remaining gas. If array is shorter than \"to\" then the remaining gas available will be used.",
+						"to": "List of addresses to call.",
+						"value": "List of values for each subcall. If array is shorter than \"to\" then additional calls will be performed with a value of 0."
+					}
+				}
+			},
+			"title": "Batch precompile",
+			"version": 1
+		},
+		"userdoc": {
+			"events": {
+				"SubcallFailed(uint256)": {
+					"notice": "Emitted when a subcall fails."
+				},
+				"SubcallSucceeded(uint256)": {
+					"notice": "Emitted when a subcall succeeds."
+				}
+			},
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Contracts/Batch.sol": "Batch"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Contracts/Batch.sol": {
+			"keccak256": "0xfcf0987df54c887c3e6b94e85ffdf830c65f817477c1ca36a385f0efbe9a7917",
+			"license": "GPL-3.0-only",
+			"urls": [
+				"bzz-raw://bdc0abae0d2e5ed0107e9bcfebc3e305ca74dbfbaf53c301391f72ab6cb5fa27",
+				"dweb:/ipfs/QmaoqRxfdBKgCc14TVrwHcT23Yhsi6MMbn55YndVNbLeCW"
+			]
+		}
+	},
+	"version": 1
+}
