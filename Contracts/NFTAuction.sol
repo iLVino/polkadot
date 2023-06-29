@@ -42,7 +42,7 @@ contract NFTAuction {
         require(_startPrice > 0, "Start price must be greater than zero");
 
         IERC721 nft = IERC721(_nftContract);
-        require(nft.ownerOf(_tokenId) == msg.sender, "Only the NFT owner can create an auction");
+        // require(nft.ownerOf(_tokenId) == msg.sender, "Only the NFT owner can create an auction");
 
         nft.transferFrom(msg.sender, address(this), _tokenId);
 
@@ -115,3 +115,5 @@ contract NFTAuction {
         );
     }
 }
+
+

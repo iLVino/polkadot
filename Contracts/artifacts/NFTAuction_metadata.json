@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.0+commit.c7dfd78e"
+		"version": "0.8.9+commit.e5eed63a"
 	},
 	"language": "Solidity",
 	"output": {
@@ -295,7 +295,7 @@
 		"compilationTarget": {
 			"Contracts/NFTAuction.sol": "NFTAuction"
 		},
-		"evmVersion": "istanbul",
+		"evmVersion": "london",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -324,11 +324,11 @@
 			]
 		},
 		"Contracts/NFTAuction.sol": {
-			"keccak256": "0x9bf662da9c5744bed573a8ebf2884d37b21b69f27c61839e98d39e01cd5611c9",
+			"keccak256": "0x409445cd78be3cab689d0e1c554afdf033219812d6515c35440a7d0bbe5292a4",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://2201c325c054350a4ff675e15d3b894319f179397da6ba58ec552b982cb21af7",
-				"dweb:/ipfs/QmTtEwkwWKGwdP5VE9dzXmvuzgN1TzV2zPRz2UojEKgm7U"
+				"bzz-raw://73f7b3d405e8a592b9e92fd1d99cb3ba4ac0dd37e888a0c03b0ea83a6a6b2018",
+				"dweb:/ipfs/QmRtgiucYmcw1Kxa26EqCVvVB7Wu4yHsEDwZbc143gzdKE"
 			]
 		}
 	},
