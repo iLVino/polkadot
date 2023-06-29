@@ -8,7 +8,7 @@ To use this project, follow the steps outlined below:
 
 ### Step 1: Deploy the NFT Contract
 
-Deploy the `NFTContract.sol` smart contract on the Moonbeam network. This contract will serve as the source for the NFTs to be minted.
+Deploy the `NFTContract.sol` smart contract on the Moonbeam test network. This contract will serve as the source for the NFTs to be minted.
 
 ### Step 2: Prepare the Batch Contract
 
